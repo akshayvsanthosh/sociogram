@@ -14,6 +14,9 @@ function Create({postDetails,setPostDetails}) {
 
   useEffect(()=>{
     if (sessionStorage.getItem("username")) {
+      setPostDetails({
+        ...postDetails, username: sessionStorage.getItem("username")
+      })
     } else {
       toast.error("Please Login")
       setTimeout(() => {
@@ -39,6 +42,7 @@ function Create({postDetails,setPostDetails}) {
   }
 
   const handleUpload = async () => {
+    console.log(postDetails);
     const { image, username, locations, caption } = postDetails
     if (image && username) {
       try {
@@ -61,7 +65,7 @@ function Create({postDetails,setPostDetails}) {
       toast.error("Please provide the username and File")
     }
     setPostDetails({
-      image: "", username: sessionStorage.getItem("username"), location: "", caption: ""
+      image: "", username: "", location: "", caption: ""
     })
 
   }
