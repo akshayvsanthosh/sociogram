@@ -17,7 +17,7 @@ function Login({ insideRegister }) {
 
     useEffect(() => {
         getAllUsers()
-    }, [])
+    }, [setUserDetails])
 
     const getAllUsers = async () => {
         try {
@@ -55,6 +55,7 @@ function Login({ insideRegister }) {
     }
 
     const handleLogin = () => {
+        console.log(userDetails);
         if (allUsers.some(users => 
             users.username === userDetails.username && users.password === userDetails.password
         )) {
