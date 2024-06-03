@@ -34,10 +34,10 @@ function Profile() {
     const handleClose = () => setOpen(false);
 
     const username = sessionStorage.getItem("username")
-    const pid = sessionStorage.getItem("id")
 
     useEffect(() => {
         if (sessionStorage.getItem("username")) {
+            console.log(sessionStorage.getItem("username"));
             getAllPost()
         } else {
             toast.error("Please Login")
@@ -50,8 +50,9 @@ function Profile() {
     const getAllPost = async () => {
         try {
             const result = await getAllPostAPI()
+            console.log(result);
             if (result.status >= 200 && result.status < 300) {
-                setMyPost(result.data.filter(post => post.id === pid))
+                setMyPost(result.data.filter(post => post.username === username))
             }
         } catch (error) {
             console.log(error);
@@ -81,6 +82,11 @@ function Profile() {
         }
         handleClose()
     }
+
+    console.log(myPost);
+    console.log(sessionStorage.getItem("username"));
+
+
 
 
     return (
