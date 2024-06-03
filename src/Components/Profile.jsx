@@ -33,6 +33,7 @@ function Profile() {
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
+    const username = sessionStorage.getItem("username")
     const id = sessionStorage.getItem("id")
 
     useEffect(() => {
