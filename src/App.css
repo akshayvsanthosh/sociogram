@@ -15,11 +15,11 @@
 
 /* create.jsx */
 fieldset{
-  border: solid 2px rgb(250, 250, 250) !important;
+  border: solid 2px #fff !important;
 }
 
 label{
-  color: rgb(255, 255, 255) !important;
+  color: #fff !important;
   font-weight: 549 !important;
   font-size: 17px !important;
 }
