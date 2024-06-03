@@ -34,7 +34,7 @@ function Profile() {
     const handleClose = () => setOpen(false);
 
     const username = sessionStorage.getItem("username")
-    const id = sessionStorage.getItem("id")
+    const pid = sessionStorage.getItem("id")
 
     useEffect(() => {
         if (sessionStorage.getItem("username")) {
@@ -51,7 +51,7 @@ function Profile() {
         try {
             const result = await getAllPostAPI()
             if (result.status >= 200 && result.status < 300) {
-                setMyPost(result.data.filter(post => post.id === id))
+                setMyPost(result.data.filter(post => post.id === pid))
             }
         } catch (error) {
             console.log(error);
