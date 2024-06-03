@@ -21,6 +21,7 @@ import ModeCommentIcon from '@mui/icons-material/ModeComment';
 import SendIcon from '@mui/icons-material/Send';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
+import DropInProfile from './DropInProfile'
 
 function Profile() {
     const [myPost, setMyPost] = useState([])
@@ -86,7 +87,7 @@ function Profile() {
             <Navbar />
             <div style={{ float: "right", width: "80%", minHeight: "100vh", padding: "20px 8px 5px 0", backgroundColor: "#141414" }}>
                 <div className='w-full flex justify-between' style={{ height: "40px" }}>
-                    <h1 style={{ paddingLeft: "11px", fontSize: "20px" }}><AccountCircleIcon className='me-2' />{username}</h1>
+                    <div className='flex items-center'><h1 style={{ paddingLeft: "11px", fontSize: "20px" }}><AccountCircleIcon className='me-2' />{username}</h1><DropInProfile/></div>
                     <button onClick={handleLogout} className='pe-3'><LogoutIcon className='me-1' />Logout</button>
                 </div>
 

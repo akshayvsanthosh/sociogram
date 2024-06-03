@@ -50,3 +50,8 @@ label{
   width: 35%;
   height: auto;
 }
+
+/* menu */
+.css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper {
+  background-color: #636363 !important;
+}  

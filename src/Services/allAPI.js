@@ -11,7 +11,7 @@ export const getAllPostAPI = async ()=>{
     return await commonApi("GET",`${serverUrl}/allPost`,"")
 }
 
-// get called by edit.jsx
+// get called by profile.jsx
 export const getPostForEditAPI = async (postId) => {
     return await commonApi("GET",`${serverUrl}/allPost/${postId}`)
 }
@@ -21,7 +21,7 @@ export const updateAPI= async (postDetails,postId) => {
     return await commonApi("PUT",`${serverUrl}/allPost/${postId}`,postDetails)
 }
 
-// delete called by home.jsx
+// delete called by profile.jsx
 export const deletePostAPI = async (postId)=>{
     return await commonApi("DELETE",`${serverUrl}/allPost/${postId}`,"")
 }
@@ -34,4 +34,9 @@ export const addUser = async (userDetails)=>{
 // get user called by register.jsx
 export const getAllUserDetails = async ()=>{
     return await commonApi("GET",`${serverUrl}/allUsers`,"")
+}
+
+// delete called by dropInProfile.jsx
+export const deleteProfileAPI = async (profileId)=>{
+    return await commonApi("DELETE",`${serverUrl}/allUsers/${profileId}`,"")
 }

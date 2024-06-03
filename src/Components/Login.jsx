@@ -17,7 +17,7 @@ function Login({ insideRegister }) {
 
     useEffect(() => {
         getAllUsers()
-    }, [setUserDetails])
+    }, [userDetails])
 
     const getAllUsers = async () => {
         try {
@@ -57,7 +57,8 @@ function Login({ insideRegister }) {
     const handleLogin = () => {
         console.log(userDetails);
         if (allUsers.some(users => 
-            users.username === userDetails.username && users.password === userDetails.password
+            {sessionStorage.setItem("id",users.id)
+            return users.username === userDetails.username && users.password === userDetails.password}
         )) {
             sessionStorage.setItem("username",userDetails.username)
             sessionStorage.setItem("password",userDetails.password)
@@ -66,6 +67,9 @@ function Login({ insideRegister }) {
             toast.error("Invalid username or password!!")
         }
     }
+
+    console.log(allUsers);
+
 
 
     return (
